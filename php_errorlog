@@ -1,0 +1,18 @@
+[09-Feb-2020 01:26:32 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function strototime() in /home/ictatjcu/public_html/stocks/stock/functions.php:61
+Stack trace:
+#0 /home/ictatjcu/public_html/stocks/stock/api.php(40): get_days('12/10/2019', '02/07/2020')
+#1 /home/ictatjcu/public_html/stocks/stock/index.php(147): include('/home/ictatjcu/...')
+#2 {main}
+  thrown in /home/ictatjcu/public_html/stocks/stock/functions.php on line 61
+[09-Feb-2020 01:27:34 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function strototime() in /home/ictatjcu/public_html/stocks/stock/functions.php:61
+Stack trace:
+#0 /home/ictatjcu/public_html/stocks/stock/api.php(40): get_days('12/10/2019', '02/07/2020')
+#1 /home/ictatjcu/public_html/stocks/stock/index.php(147): include('/home/ictatjcu/...')
+#2 {main}
+  thrown in /home/ictatjcu/public_html/stocks/stock/functions.php on line 61
+[09-Feb-2020 01:28:35 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function strototime() in /home/ictatjcu/public_html/stocks/stock/functions.php:61
+Stack trace:
+#0 /home/ictatjcu/public_html/stocks/stock/api.php(40): get_days('12/10/2019', '02/07/2020')
+#1 /home/ictatjcu/public_html/stocks/stock/index.php(147): include('/home/ictatjcu/...')
+#2 {main}
+  thrown in /home/ictatjcu/public_html/stocks/stock/functions.php on line 61

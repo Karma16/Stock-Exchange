@@ -33,7 +33,6 @@
 session_start();
 
 date_default_timezone_set('America/New_York'); 
-require "db_connect.php";
-require "functions/functions.php";
+
 include("validation_login_reg.php");
 ?>

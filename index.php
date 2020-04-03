@@ -30,7 +30,8 @@ h4
 <?php 
 //session_start();
 include ('inc.php');
-
+require "db_connect.php";
+require "functions/functions.php";
 if(isset($_SESSION['email']))
 {//
 alert("Hello ".$_SESSION['name']."! How are you today?");

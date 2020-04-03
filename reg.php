@@ -1,7 +1,8 @@
 <?php 
   
 include ('inc.php');
-
+require "db_connect.php";
+require "functions/functions.php";
 //require "functions/functions.php";
 
 if (isset($_POST['submit'])) {

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
  <style> 
@@ -28,7 +29,7 @@ h4
 }     
 </style>
 <?php 
-//session_start();
+
 include ('inc.php');
 require "db_connect.php";
 require "functions/functions.php";

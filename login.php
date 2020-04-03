@@ -1,4 +1,6 @@
-<?php include ('inc.php');?>
+<?php 
+session_start();
+include ('inc.php');?>
 
 
 

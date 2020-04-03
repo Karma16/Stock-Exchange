@@ -2,37 +2,63 @@
 <html>
  <style> 
 h4
-     {
+
        
   text-align: center;
       
 }
 #today-i
-     {
-         font-size: 40px;
-         color: darkblue;
-         text-align: center;
-         text-decoration: none;
-         border-color: black;
-         
-        
-     }
+{
+  font-size: 40px;
+  color: darkblue;
+  text-align: center;
+  text-decoration: none;
+  border-color: black;
+  
+  
+}
      
-     #today_in
-     {
-         font-size: 17px;
-         color: darkblue;
-         text-align: center;
-         text-decoration: none;
-         border: none;
-     }
+#today_in
+{
+  font-size: 17px;
+  color: darkblue;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}     
 </style>
-    <?php include ('inc.php');
-    date_default_timezone_set('America/New_York');
-      $today=date('m/d/Y H:i:s a'); 
-                   
-          $_SESSION['today'] = $today;
-    session_start();
+<?php 
+//session_start();
+include ('inc.php');
+
+if(isset($_SESSION['email']))
+{//
+alert("Hello ".$_SESSION['name']."! How are you today?");
+}
+else
+{?>
+  <script>
+    var yes = confirm("Hi there! Would you like to register?");
+    if (yes) {
+      window.location.replace("reg.php");
+    } else {
+        // Do nothing!
+    }
+  </script>
+<?php 
+}
+    //header("location: login.php")
+
+
+
+$_SESSION['today'] = $today;
+
+
+date_default_timezone_set('America/New_York');
+$today=date('m/d/Y H:i:s a'); 
+                
+         
+    
 // set timeout period in seconds
 /*$inactive = 1;
 // check to see if $_SESSION['timeout'] is set
@@ -48,42 +74,12 @@ $_SESSION['timeout'] = time();
 
   */
    
-   header("Refresh:60");
-    ?>
-    
+header("Refresh:60");
+?>
 <body onload = "start();">
     
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Stock Exchange</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
-          </li>
-		  <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-		  <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+  <?php include("nav.php");?>
 <!-- Header -->
   <header class="bg-primary py-5 mb-5">
     <div class="container h-100">
@@ -108,43 +104,44 @@ $_SESSION['timeout'] = time();
         <a class="btn btn-primary btn-lg" href="companyDescription.html">read more &raquo;</a>
       </div>
       <div class="col-md-4 mb-5" >
-         <?php include ('converter.php');?>
-       
-         <label for="today" id='today-i'></label>  
- <input type="text" id="today_in" name="today" value="<?php 
-    date_default_timezone_set('America/New_York');
-                           echo date('d/m/y H:i:s a'); ?>" disabled/>
-            
+        <?php include ('converter.php');?>
+
+        <label for="today" id='today-i'></label>  
+        <input type="text" id="today_in" name="today" value="
+        <?php 
+        date_default_timezone_set('America/New_York');
+                        echo date('d/m/y H:i:s a'); 
+        ?>" disabled/>
+
       </div>
     </div>
-      <div class="row">
-      <div class="col-md-8 mb-5">
-    <?php include('dropdown.php');
-   
-          ?>
-<h4><?php //echo  $_SESSION['period'];
-    switch ($_SESSION['period'])
-       { case 'intraday':
-         echo '5 mins interval';
+  <div class="row">
+    <div class="col-md-8 mb-5">
+      <?php include('dropdown.php');?>
+      <h4><?php //echo  $_SESSION['period'];
+          switch ($_SESSION['period'])
+          { case 'intraday':
+          echo '5 mins interval';
           break;
-        case 'day':
-         echo 'Daily interval';
+          case 'day':
+          echo 'Daily interval';
           break;
-        case 'week':
-         echo 'Weekly interval';
+          case 'week':
+          echo 'Weekly interval';
           break;
-        case 'month':
-         echo 'Monthly interval';
+          case 'month':
+          echo 'Monthly interval';
           break;
-       
-       }?> </h4>  
-</div>
-        
+
+          }?> 
+    </h4>  
     </div>
-  
+
+  </div>
+
   </div> 
  
-        <?php  include('api.php');?>
+<?php  include('api.php');?>
  
   <!-- /.container -->
 
